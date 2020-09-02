@@ -130,6 +130,10 @@ type Config struct {
 	// for disk_size, Packer uses a default of `40960M` (40 GB). If a disk_size
 	// number is provided with no units, Packer will default to Megabytes.
 	DiskSize string `mapstructure:"disk_size" required:"false"`
+	// Packer resize the QCOW2 image using
+	// qemu-img resize.  Set this option to true to disable resizing.
+	// Defaults to false.
+	SkipResizeDisk bool `mapstructure:"skip_resize_disk" required:"false"`
 	// The cache mode to use for disk. Allowed values include any of
 	// `writethrough`, `writeback`, `none`, `unsafe` or `directsync`. By
 	// default, this is set to `writeback`.
